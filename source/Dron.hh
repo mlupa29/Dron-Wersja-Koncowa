@@ -3,8 +3,6 @@
 #include <unistd.h>
 #include "Dr3D_gnuplot_api.hh"
 #include "Prostopadloscian.hh"
-// #include "Powierzchnia->hh"
-// #include "Dno->hh"
 #include "Graniastoslup.hh"
 #include "interfdron.hh"
 using std::vector;
@@ -59,17 +57,17 @@ Dron(std::shared_ptr<drawNS::Draw3DAPI> &api):api(api)
 
 
 bool czy_kolizjadol(double promien_drona){
-  if( a->get_srodek()[2]>-40+promien_drona){cout<<"Kolizja"<<endl;return true;
+  if( a->get_srodek()[2]>-40+promien_drona){return true;
   
   }
-  else{return false;}
+  else{cout<<"Kolizja"<<endl;return false;}
 }
 
 bool czy_kolizjagora(double promien_drona){
-  if(a->get_srodek()[2]<30  ){cout<<"Kolizja"<<endl;return true;
+  if(a->get_srodek()[2]<30  ){return true;
   
   }
-  else{return false;}
+  else{cout<<"Kolizja"<<endl;return false;}
 }
 
 void start()
